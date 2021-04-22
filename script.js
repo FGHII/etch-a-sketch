@@ -30,7 +30,10 @@ resetBtn.addEventListener("click", function() {
   document.querySelectorAll(".square.color").forEach(function(square) {
     square.classList.remove("color");
   });
-  newGridSize = prompt("Enter new grid size:");
+  let newGridSize = 0;
+  while (newGridSize < 1 || newGridSize > 100) {
+  newGridSize = prompt("Enter new grid height/width (1-100):");
+  };
   const gridContainer = document.querySelector(".grid-container");
   //remove all child nodes from grid container to erase the grid
   while (gridContainer.firstChild) {
